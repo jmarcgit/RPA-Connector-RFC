@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object class="Snippet" serializationversion="0">
+  <prologue>
+    <saved-by-versions>
+      <version>11.0.0.0</version>
+    </saved-by-versions>
+    <file-type>snippet</file-type>
+    <referenced-types>
+      <type name="RfcConnection"/>
+    </referenced-types>
+    <triggers/>
+    <sub-robots/>
+    <device-mappings/>
+    <comment/>
+    <tags/>
+    <referenced-snippets/>
+    <typed-variables>
+      <typed-variable name="rfcConnection" type-name="RfcConnection"/>
+    </typed-variables>
+    <global-variables/>
+    <parameters/>
+    <return-variables/>
+    <store-in-database-variables/>
+    <browser-engine>WEBKIT</browser-engine>
+  </prologue>
+  <property name="variables" class="Variables">
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">password</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="SimpleTypeReference">
+          <property name="simpleTypeId" class="Integer">9</property>
+        </property>
+      </property>
+    </object>
+    <object class="Variable" serializationversion="1">
+      <property name="name" class="String">rfcConnection</property>
+      <property name="initialAssignment" class="InitialVariableAssignment">
+        <property name="type" class="TypeReference" serializationversion="0">
+          <property name="typeName" class="String">RfcConnection</property>
+        </property>
+        <property name="assignments" class="AttributeAssignments">
+          <property name="ashost" class="AttributeAssignment">
+            <property name="attributeValue" class="String">HOST</property>
+            <property name="currentlyAssigned" class="Boolean">true</property>
+            <property name="lastKnownAttributeType" class="java.lang.Class" id="0">kapow.robot.plugin.common.domain.StringAttributeType</property>
+          </property>
+          <property name="client" class="AttributeAssignment">
+            <property name="attributeValue" class="String">321</property>
+            <property name="currentlyAssigned" class="Boolean">true</property>
+            <property name="lastKnownAttributeType" idref="0"/>
+          </property>
+          <property name="lang" class="AttributeAssignment">
+            <property name="attributeValue" class="String">EN</property>
+            <property name="currentlyAssigned" class="Boolean">true</property>
+            <property name="lastKnownAttributeType" idref="0"/>
+          </property>
+          <property name="sysnr" class="AttributeAssignment">
+            <property name="attributeValue" class="String">00</property>
+            <property name="currentlyAssigned" class="Boolean">true</property>
+            <property name="lastKnownAttributeType" idref="0"/>
+          </property>
+          <property name="user" class="AttributeAssignment">
+            <property name="attributeValue" class="String">USER</property>
+            <property name="currentlyAssigned" class="Boolean">true</property>
+            <property name="lastKnownAttributeType" idref="0"/>
+          </property>
+        </property>
+      </property>
+    </object>
+  </property>
+  <comment class="String"/>
+  <body class="Body">
+    <blockBeginStep class="BlockBeginStep" id="1"/>
+    <steps class="ArrayList">
+      <object class="Transition" serializationversion="3" id="2">
+        <property name="name" class="String">Lookup Password</property>
+        <property name="stepAction" class="LookupPassword">
+          <property name="userName" class="kapow.robot.plugin.common.support.expression.multipletype.ComplexVariableAllowedVariableExpression" serializationversion="2">
+            <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+              <property name="name" class="String">rfcConnection.user</property>
+            </property>
+          </property>
+          <property name="targetSystem" class="kapow.robot.plugin.common.support.expression.multipletype.ComplexVariableAllowedVariableExpression" serializationversion="2">
+            <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+              <property name="name" class="String">rfcConnection.ashost</property>
+            </property>
+          </property>
+          <property name="variable" class="kapow.robot.plugin.common.support.AttributeName2">
+            <property name="name" class="String">password</property>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" class="Boolean" id="3">true</property>
+        <property name="changedProperties" class="java.util.HashSet"/>
+      </object>
+      <object class="Transition" serializationversion="3" id="4">
+        <property name="name" class="String">Convert Variables</property>
+        <property name="stepAction" class="ConvertVariables">
+          <property name="entries" class="kapow.robot.plugin.common.stateprocessor.attributeconverter.AttributeConverterEntries">
+            <object class="kapow.robot.plugin.common.stateprocessor.attributeconverter.AttributeConverterEntry" serializationversion="0">
+              <property name="fromAttributeName" class="kapow.robot.plugin.common.support.AttributeName">
+                <property name="name" class="String">password</property>
+              </property>
+              <property name="toAttributeName" class="kapow.robot.plugin.common.support.AttributeName">
+                <property name="name" class="String">rfcConnection.passwd</property>
+              </property>
+            </object>
+          </property>
+        </property>
+        <property name="elementFinders" class="ElementFinders"/>
+        <property name="errorHandler" class="ErrorHandler" serializationversion="0"/>
+        <property name="comment">
+          <null/>
+        </property>
+        <property name="enabled" idref="3"/>
+        <property name="changedProperties" class="java.util.HashSet"/>
+      </object>
+    </steps>
+    <blockEndStep class="BlockEndStep" id="5"/>
+    <edges class="ArrayList">
+      <object class="TransitionEdge">
+        <from idref="1"/>
+        <to idref="2"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="2"/>
+        <to idref="4"/>
+      </object>
+      <object class="TransitionEdge">
+        <from idref="4"/>
+        <to idref="5"/>
+      </object>
+    </edges>
+  </body>
+</object>

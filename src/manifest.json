@@ -1,0 +1,32 @@
+{
+	"actions": [
+		{
+			"name": "call",
+			"type": "node",
+			"parameters": [
+				{
+					"name": "jsonConnection",
+					"type": "string"					
+				},
+				{
+					"name": "rfmName",
+					"type": "string"					
+				},
+				{
+					"name": "jsonRequest",
+					"type": "string"					
+				}
+			],
+			"response": [
+				{
+					"name": "jsonResponse",
+					"type": "string"
+				}
+			],
+			"commandline": [
+				"return require('krpa-rfc').call(%1, %2, %3);"
+			]
+		}
+	],
+	"name": "sap rfc"
+}
