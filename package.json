@@ -8,7 +8,6 @@
   "dependencies": {
     "docker-cli-js": "latest",
     "fs-extra": "latest",
-    "npm": "latest",
     "zip-local": "latest"
   },
   "devDependencies": {},
